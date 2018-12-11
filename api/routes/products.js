@@ -36,7 +36,7 @@ const upload = multer({ storage : storage,
 
 
 // import the model(database) for products
-const Product = require ('../models for product/product');
+const Product = require ('../models/product');
 
 // Handling GET requests on /products (general)
 

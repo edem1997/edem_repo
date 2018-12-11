@@ -10,13 +10,10 @@ const mongoose = require('mongoose');
 // implementation of the product route
 
 const productRouter = require('./api/routes/products');
-
-
+const userRouter = require('./api/routes/users');
 
 // using mongoose to connect with the database
 mongoose.connect("mongodb://cluster0-shard-00-00-ckeqy.mongodb.net:27017,cluster0-shard-00-01-ckeqy.mongodb.net:27017,cluster0-shard-00-02-ckeqy.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true");
-
-
 
 const app = express();
 // tosend static content
@@ -43,6 +40,7 @@ app.use((res, req, next) => {
 // to handle incoming resquest at product endpoint
 
 app.use('/products', productRouter);
+app.use('/users', userRouter);
 
 // handling errors
 
